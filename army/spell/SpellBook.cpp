@@ -14,7 +14,11 @@ SpellBook::SpellBook() {
 }
 
 SpellBook::~SpellBook() {
-    this->spellList.clear();
+    std::map<Spells, Spell*>::iterator it;
+
+    for ( it = this->spellList.begin(); it != this->spellList.end(); it++ ) {
+        delete it->second;
+    }
 }
 
 void SpellBook::getSpellList() const {
