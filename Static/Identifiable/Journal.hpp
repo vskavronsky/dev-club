@@ -1,5 +1,5 @@
-#ifndef JOURNAL_H
-#define JOURNAL_H
+#ifndef JOURNAL_HPP
+#define JOURNAL_HPP
 
 #include "Identifiable.hpp"
 
@@ -25,4 +25,4 @@ class Journal : public Identifiable {
 
 std::ostream& operator<<(std::ostream& out, const Journal& journal);
 
-#endif // JOURNAL_H
+#endif // JOURNAL_HPP
