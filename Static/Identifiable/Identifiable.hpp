@@ -1,5 +1,5 @@
-#ifndef IDENTIFIABLE_H
-#define IDENTIFIABLE_H
+#ifndef IDENTIFIABLE_HPP
+#define IDENTIFIABLE_HPP
 
 #include <iostream>
 
@@ -16,4 +16,4 @@ class Identifiable {
 
 };
 
-#endif // IDENTIFIABLE_H
+#endif // IDENTIFIABLE_HPP
