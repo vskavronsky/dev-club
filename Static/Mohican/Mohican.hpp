@@ -1,5 +1,5 @@
-#ifndef MOHICAN_H
-#define MOHICAN_H
+#ifndef MOHICAN_HPP
+#define MOHICAN_HPP
 
 #include <iostream>
 #include <list>
@@ -30,4 +30,4 @@ class Mohican {
 
 std::ostream& operator<<(std::ostream& out, const Mohican& mohican);
 
-#endif // MOHICAN_H
+#endif // MOHICAN_HPP
