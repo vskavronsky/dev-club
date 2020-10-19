@@ -1,5 +1,5 @@
-#ifndef COUNTABLE_H
-#define COUNTABLE_H
+#ifndef COUNTABLE_HPP
+#define COUNTABLE_HPP
 
 #include <iostream>
 
@@ -15,4 +15,4 @@ class Countable {
 
 };
 
-#endif // COUNTABLE_H
+#endif // COUNTABLE_HPP
