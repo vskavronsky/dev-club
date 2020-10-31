@@ -1,9 +1,9 @@
-#ifndef GEOMETRICPROG_HPP
-#define GEOMETRICPROG_HPP
+#ifndef GEOMETRICPROGITER_HPP
+#define GEOMETRICPROGITER_HPP
 
 #include <iostream>
 
-class GeometricProg {
+class GeometricProgIter {
     private:
         int m_current;
         int m_step;
@@ -11,8 +11,8 @@ class GeometricProg {
         int m_count;
 
     public:
-        GeometricProg(int current, int step, int limit);
-        virtual ~GeometricProg();
+        GeometricProgIter(int current, int step, int limit);
+        virtual ~GeometricProgIter();
 
         void next();
         void operator++();
@@ -23,6 +23,6 @@ class GeometricProg {
 
 };
 
-std::ostream& operator<<(std::ostream& out, const GeometricProg& range);
+std::ostream& operator<<(std::ostream& out, const GeometricProgIter& range);
 
-#endif // GEOMETRICPROG_HPP
+#endif // GEOMETRICPROGITER_HPP
