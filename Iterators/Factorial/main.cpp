@@ -1,11 +1,10 @@
 #include <iostream>
-#include "Factorial.hpp"
+#include "FactorialIter.hpp"
 
 int main() {
-    Factorial* range = new Factorial(8);
+    FactorialIter* range = new FactorialIter(8);
 
     std::cout << "Range:";
-
     for ( ; !range->over(); ++(*range) ) {
         std::cout << " " << *range;
     }
