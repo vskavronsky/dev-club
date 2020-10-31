@@ -1,20 +1,20 @@
-#include "Prime.hpp"
+#include "PrimeIter.hpp"
 
 #define DEFAULT_VALUE 0
 #define EVEN_DIVISOR 2
 #define ODD_DIVISOR 3
 
-Prime::Prime(int limit) : m_result(2), m_vectorIndex(0), m_limit(limit) {
+PrimeIter::PrimeIter(int limit) : m_limit(limit), m_result(2), m_vectorIndex(0) {
     m_primes = new std::vector<unsigned long long int>(m_limit);
     (*m_primes)[m_vectorIndex] = m_result;
 }
 
-Prime::~Prime() {
+PrimeIter::~PrimeIter() {
     delete m_primes;
     m_primes = nullptr;
 }
 
-unsigned long long int Prime::prime(unsigned long long int number) {
+unsigned long long int PrimeIter::prime(unsigned long long int number) {
     if (number == 3) {
         return number;
     }
@@ -32,12 +32,12 @@ unsigned long long int Prime::prime(unsigned long long int number) {
     return number;
 }
 
-void Prime::setNext(int currentIndex) {
+void PrimeIter::setNext(int currentIndex) {
     m_result = prime(m_result+1);
     (*m_primes)[currentIndex] = m_result;
 }
 
-void Prime::getPrimes() {
+void PrimeIter::getPrimes() {
     std::cout << "Vector:";
     for ( const auto& prime : *m_primes ) {
         std::cout << " " << prime;
@@ -45,7 +45,7 @@ void Prime::getPrimes() {
     std::cout << std::endl;
 }
 
-void Prime::setLimit(int limit) {
+void PrimeIter::setLimit(int limit) {
     for ( int i = 0; i < limit; ++i ) {
         m_primes->push_back(DEFAULT_VALUE);
     }
@@ -53,7 +53,7 @@ void Prime::setLimit(int limit) {
     m_limit += limit;
 }
 
-void Prime::next() {
+void PrimeIter::next() {
     if ( end() ) {
         return;
     }
@@ -67,15 +67,15 @@ void Prime::next() {
     }
 }
 
-void Prime::operator++() {
+void PrimeIter::operator++() {
     next();
 }
 
-void Prime::operator++(int) {
+void PrimeIter::operator++(int) {
     operator++();
 }
 
-void Prime::prev() {
+void PrimeIter::prev() {
     if ( begin() ) {
         return;
     }
@@ -83,30 +83,30 @@ void Prime::prev() {
     m_vectorIndex -= 1;
 }
 
-void Prime::operator--() {
+void PrimeIter::operator--() {
     prev();
 }
 
-void Prime::operator--(int) {
+void PrimeIter::operator--(int) {
     operator--();
 }
 
-bool Prime::begin() const {
+bool PrimeIter::begin() const {
     return m_vectorIndex == 0;
 }
 
-bool Prime::end() const {
+bool PrimeIter::end() const {
     return m_vectorIndex == m_limit;
 }
 
-unsigned long long int Prime::value() const {
+unsigned long long int PrimeIter::value() const {
     return (*m_primes)[m_vectorIndex];
 }
 
-unsigned long long int Prime::operator*() const {
+unsigned long long int PrimeIter::operator*() const {
     return value();
 }
 
-std::ostream& operator<<(std::ostream& out, const Prime& prime) {
+std::ostream& operator<<(std::ostream& out, const PrimeIter& prime) {
     return out << *prime;
 }
