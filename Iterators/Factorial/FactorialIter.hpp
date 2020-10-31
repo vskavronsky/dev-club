@@ -1,9 +1,9 @@
-#ifndef FACTORIAL_HPP
-#define FACTORIAL_HPP
+#ifndef FACTORIALITER_HPP
+#define FACTORIALITER_HPP
 
 #include <iostream>
 
-class Factorial {
+class FactorialIter {
     private:
         unsigned long long int m_result;
         int m_count;
@@ -12,8 +12,8 @@ class Factorial {
         unsigned long long int factorial(int number);
 
     public:
-        explicit Factorial(int limit);
-        virtual ~Factorial();
+        explicit FactorialIter(int limit);
+        virtual ~FactorialIter();
 
         void next();
         void operator++();
@@ -24,6 +24,6 @@ class Factorial {
 
 };
 
-std::ostream& operator<<(std::ostream& out, const Factorial& factorial);
+std::ostream& operator<<(std::ostream& out, const FactorialIter& factorial);
 
 #endif // FACTORIAL_HPP
