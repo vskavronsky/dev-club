@@ -1,14 +1,14 @@
-#ifndef PRIME_HPP
-#define PRIME_HPP
+#ifndef PRIMEITER_HPP
+#define PRIMEITER_HPP
 
 #include <iostream>
 #include <vector>
 
-class Prime {
+class PrimeIter {
     private:
+        int m_limit;
         unsigned long long int m_result;
         int m_vectorIndex;
-        int m_limit;
 
         std::vector<unsigned long long int>* m_primes;
 
@@ -16,8 +16,8 @@ class Prime {
         void setNext(int currentIndex);
 
     public:
-        explicit Prime(int limit);
-        virtual ~Prime();
+        explicit PrimeIter(int limit);
+        virtual ~PrimeIter();
 
         void getPrimes();
         void setLimit(int limit);
@@ -38,6 +38,6 @@ class Prime {
 
 };
 
-std::ostream& operator<<(std::ostream& out, const Prime& prime);
+std::ostream& operator<<(std::ostream& out, const PrimeIter& prime);
 
-#endif // PRIME_HPP
+#endif // PRIMEITER_HPP
