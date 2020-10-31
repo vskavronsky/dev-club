@@ -5,9 +5,9 @@
 
 class FactorialIter {
     private:
+        int m_limit;    
         unsigned long long int m_result;
         int m_count;
-        int m_limit;
 
         unsigned long long int factorial(int number);
 
@@ -26,4 +26,4 @@ class FactorialIter {
 
 std::ostream& operator<<(std::ostream& out, const FactorialIter& factorial);
 
-#endif // FACTORIAL_HPP
+#endif // FACTORIALITER_HPP
