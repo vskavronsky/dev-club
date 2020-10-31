@@ -1,11 +1,10 @@
 #include <iostream>
-#include "GeometricProg.hpp"
+#include "GeometricProgIter.hpp"
 
 int main() {
-    GeometricProg* range = new GeometricProg(3, -2, 10);
+    GeometricProgIter* range = new GeometricProgIter(3, -2, 10);
 
     std::cout << "Range:";
-
     for ( ; !range->over(); (*range)++ ) {
         std::cout << " " << *range;
     }
