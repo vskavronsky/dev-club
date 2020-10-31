@@ -1,11 +1,11 @@
 #include <iostream>
-#include "Fibonacci.hpp"
+#include "FibonacciIter.hpp"
 
 int main() {
-    Fibonacci* posRange = new Fibonacci(21);
+    FibonacciIter* posRange = new FibonacciIter(21);
 
     std::cout << "Fibonacci positive values:";
-
+    
     for ( ; !posRange->over(); (*posRange)++ ) {
         std::cout << " " << *posRange;
     }
@@ -14,7 +14,7 @@ int main() {
     delete posRange;
     posRange = nullptr;
 
-    Fibonacci* negRange = new Fibonacci(-21);
+    FibonacciIter* negRange = new FibonacciIter(-21);
 
     std::cout << "Fibonacci negative values:";
 
