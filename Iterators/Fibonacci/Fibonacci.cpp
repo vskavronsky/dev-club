@@ -1,13 +1,13 @@
-#include "Fibonacci.hpp"
+#include "FibonacciIter.hpp"
 
 #define BEGIN 0
 #define INITIAL_VALUE 0
 
-Fibonacci::Fibonacci(int limit) : m_result(INITIAL_VALUE), m_count(BEGIN), m_limit(limit) {}
+FibonacciIter::FibonacciIter(int limit) :  m_limit(limit), m_result(INITIAL_VALUE), m_count(BEGIN) {}
 
-Fibonacci::~Fibonacci() {}
+FibonacciIter::~FibonacciIter() {}
 
-long long int Fibonacci::fibonacci(int number) {
+long long int FibonacciIter::fibonacci(int number) {
     int fibonacci1 = 0;
     int fibonacci2 = 1;
 
@@ -38,7 +38,7 @@ long long int Fibonacci::fibonacci(int number) {
     return 0;
 }
 
-void Fibonacci::next() {
+void FibonacciIter::next() {
     if ( over() ) {
         return;
     }
@@ -46,7 +46,7 @@ void Fibonacci::next() {
     m_result = fibonacci(m_count);
 }
 
-void Fibonacci::prev() {
+void FibonacciIter::prev() {
     if ( over() ) {
         return;
     }
@@ -54,34 +54,34 @@ void Fibonacci::prev() {
     m_result = fibonacci(m_count);
 }
 
-void Fibonacci::operator++() {
+void FibonacciIter::operator++() {
     next();
 }
 
-void Fibonacci::operator++(int) {
+void FibonacciIter::operator++(int) {
     operator++();
 }
 
-void Fibonacci::operator--() {
+void FibonacciIter::operator--() {
     prev();
 }
 
-void Fibonacci::operator--(int) {
+void FibonacciIter::operator--(int) {
     operator--();
 }
 
-bool Fibonacci::over() const {
+bool FibonacciIter::over() const {
     return m_count == m_limit;
 }
 
-long long int Fibonacci::value() const {
+long long int FibonacciIter::value() const {
     return m_result;
 }
 
-long long int Fibonacci::operator*() const {
+long long int FibonacciIter::operator*() const {
     return value();
 }
 
-std::ostream& operator<<(std::ostream& out, const Fibonacci& fibonacci) {
+std::ostream& operator<<(std::ostream& out, const FibonacciIter& fibonacci) {
     return out << *fibonacci;
 }
