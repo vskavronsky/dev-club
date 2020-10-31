@@ -1,11 +1,10 @@
 #include <iostream>
-#include "ArithmeticProg.hpp"
+#include "ArithmeticProgIter.hpp"
 
 int main() {
-    ArithmeticProg* range = new ArithmeticProg(2, 3, 20);
+    ArithmeticProgIter* range = new ArithmeticProgIter(2, 3, 20);
 
     std::cout << "Range:";
-
     for ( ; !range->over(); ++(*range) ) {
         std::cout << " " << *range;
     }
