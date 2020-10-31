@@ -1,8 +1,8 @@
 #include <iostream>
-#include "Prime.hpp"
+#include "PrimeIter.hpp"
 
 int main() {
-    Prime* range = new Prime(5);
+    PrimeIter* range = new PrimeIter(5);
 
     std::cout << "Range:";
     for ( ; !range->end(); ++(*range) ) {
