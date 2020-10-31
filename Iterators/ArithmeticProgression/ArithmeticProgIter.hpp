@@ -1,9 +1,9 @@
-#ifndef ARITHMETICPROG_HPP
-#define ARITHMETICPROG_HPP
+#ifndef ARITHMETICPROGITER_HPP
+#define ARITHMETICPROGITER_HPP
 
 #include <iostream>
 
-class ArithmeticProg {
+class ArithmeticProgIter {
     private:
         int m_current;
         int m_step;
@@ -11,8 +11,8 @@ class ArithmeticProg {
         int m_count;
 
     public:
-        ArithmeticProg(int current, int step, int limit);
-        virtual ~ArithmeticProg();
+        ArithmeticProgIter(int current, int step, int limit);
+        virtual ~ArithmeticProgIter();
 
         void next();
         void operator++();
@@ -23,6 +23,6 @@ class ArithmeticProg {
 
 };
 
-std::ostream& operator<<(std::ostream& out, const ArithmeticProg& range);
+std::ostream& operator<<(std::ostream& out, const ArithmeticProgIter& range);
 
-#endif // ARITHMETICPROG_HPP
+#endif // ARITHMETICPROGITER_HPP
