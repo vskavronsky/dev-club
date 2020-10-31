@@ -1,19 +1,19 @@
-#ifndef FIBONACCI_HPP
-#define FIBONACCI_HPP
+#ifndef FIBONACCIITER_HPP
+#define FIBONACCIITER_HPP
 
 #include <iostream>
 
-class Fibonacci {
+class FibonacciIter {
     private:
+        int m_limit;
         long long int m_result;
         int m_count;
-        int m_limit;
 
         long long int fibonacci(int number);
 
     public:
-        explicit Fibonacci(int limit);
-        virtual ~Fibonacci();
+        explicit FibonacciIter(int limit);
+        virtual ~FibonacciIter();
 
         void next();
         void prev();
@@ -31,6 +31,6 @@ class Fibonacci {
 
 };
 
-std::ostream& operator<<(std::ostream& out, const Fibonacci& fibonacci);
+std::ostream& operator<<(std::ostream& out, const FibonacciIter& fibonacci);
 
-#endif // FIBONACCI_HPP
+#endif // FIBONACCIITER_HPP
