@@ -1,48 +1,48 @@
-Symbols found: 2592
-Words found: 573
+Symbols found: 2560
+Words found: 569
 
 Letters statistic:
 Unique: [ 'a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y' ]
 Matches in text: 
-    a = 216 matches
+    a = 215 matches
     b = 54 matches
-    c = 53 matches
+    c = 52 matches
     d = 57 matches
-    e = 320 matches
-    f = 57 matches
+    e = 317 matches
+    f = 56 matches
     g = 49 matches
-    h = 171 matches
+    h = 170 matches
     i = 168 matches
-    j = 8 matches
-    k = 33 matches
-    l = 91 matches
+    j = 7 matches
+    k = 32 matches
+    l = 88 matches
     m = 57 matches
-    n = 177 matches
-    o = 151 matches
+    n = 175 matches
+    o = 149 matches
     p = 24 matches
-    r = 132 matches
-    s = 204 matches
+    r = 130 matches
+    s = 202 matches
     t = 238 matches
-    u = 66 matches
+    u = 64 matches
     v = 18 matches
     w = 34 matches
     x = 8 matches
-    y = 54 matches
+    y = 52 matches
 
 Numbers statistic:
 Unique: [ '0', '2', '5', '6', '7' ]
 Matches in text: 
-    0 = 20 matches
-    2 = 10 matches
-    5 = 10 matches
-    6 = 8 matches
+    0 = 18 matches
+    2 = 9 matches
+    5 = 9 matches
+    6 = 7 matches
     7 = 2 matches
 
 Special symbols statistic:
 Unique: [ '!', ''', ',', '.', '?' ]
 Matches in text: 
     ! = 2 matches
-    ' = 26 matches
+    ' = 23 matches
     , = 24 matches
     . = 49 matches
     ? = 1 matches
@@ -87,7 +87,7 @@ Matches in text:
     can = 2 matches
     can't = 1 matches
     care = 2 matches
-    carefully = 2 matches
+    carefully = 1 matches
     checks = 1 matches
     chris = 1 matches
     christmas = 1 matches
@@ -146,7 +146,7 @@ Matches in text:
     he's = 1 matches
     head = 1 matches
     henry = 14 matches
-    henry's = 2 matches
+    henry's = 1 matches
     her = 8 matches
     him = 4 matches
     his = 8 matches
@@ -168,7 +168,7 @@ Matches in text:
     january = 1 matches
     job = 2 matches
     july = 1 matches
-    june = 2 matches
+    june = 1 matches
     just = 2 matches
     kicking = 1 matches
     knows = 1 matches
@@ -182,7 +182,7 @@ Matches in text:
     long = 1 matches
     longer = 1 matches
     looking = 4 matches
-    looks = 7 matches
+    looks = 6 matches
     make = 1 matches
     may = 1 matches
     means = 2 matches
