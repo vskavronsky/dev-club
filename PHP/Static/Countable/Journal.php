@@ -27,6 +27,10 @@
             parent::__construct();
         }
         
+        public function __destruct() {
+            parent::__destruct();
+        }
+        
         public function __get($name) {
             if ( property_exists($this, $name) ) {
                 return $this->$name;    
