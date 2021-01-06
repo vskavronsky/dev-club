@@ -1,0 +1,19 @@
+h1 {
+    color: orange;
+}
+
+p {
+    color: red;
+}
+
+form label {
+    color: white;
+}
+
+form input {
+    color: darkblue;
+}
+
+body {
+    background: url('images/background.jpg');
+}

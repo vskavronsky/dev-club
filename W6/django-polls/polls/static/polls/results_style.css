@@ -1,0 +1,15 @@
+h1 {
+    color: orange;
+}
+
+li {
+    color: white;
+}
+
+a {
+    color: lightblue;
+}
+
+body {
+    background: url('images/background.jpg');
+}

@@ -1,0 +1,21 @@
+li a {
+    color: orange;
+}
+
+h1 {
+    color: white;
+}
+
+form label[for^=choice] {
+    /*colors = [red, yellow, green]*/
+    /*for item in colors:*/
+        color: orange;
+}
+
+form input {
+    color: green;
+}
+
+body {
+    background: black url('images/background.gif') no-repeat;
+}
