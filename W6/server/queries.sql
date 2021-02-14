@@ -8,6 +8,8 @@ Shell commands:
     \d - tables list
     \d+ <table_name> - table description
     \c <database> - connect to database
+    \c <db_name> <usr_name> - connect to database with role
+    \db - listing the existing tablespaces
 
 CREATE ROLE shop LOGIN CREATEDB PASSWORD 'shop';
 CREATE DATABASE shop WITH OWNER=shop ENCODING='UTF8';
@@ -79,26 +81,35 @@ INSERT INTO "item" (item_title, item_price, category_id) VALUES
 ('Ariston', 999.99, 3);
 
 select * from pg_shadow; --see all users
-select * from pg_database; --se all databases
+select * from pg_database; --see all databases
 
-drop database shop; --del database
-drop user shop; --del user
+drop database shop; --delete database
+drop user shop; --delete user
 
--- 1. Создать базу данных shop.
--- 2. Создать юзера shop и дать ему полный доступ к БД shop.
--- 4. Создать таблицу для хранения категорий (хранить название).
--- 5. Добавить несколько категорий.
--- 6. Создать таблицу для хранения товаров (название, категория, цена).
--- 7. Внести несколько товаров по цене 1.00
--- 8. Обновить цену первого товара — 3.50
--- 9. Увеличить цену всех товаров на 10%.
--- 10. Удалить товар № 2.
--- 11. Выбрать все товары с сортировкой по названию.
--- 12. Выбрать все товары с сортировкой по убыванию цены.
--- 13. Выбрать 3 самых дорогих товара.
--- 14. Выбрать 3 самых дешевых товара.
--- 15. Выбрать вторую тройку самых дорогих товаров (с 4 по 6).
--- 16. Выбрать наименование самого дорогого товара.
--- 17. Выбрать наименование самого дешевого товара.
--- 18. Выбрать количество всех товаров.
--- 19. Выбрать среднюю цену всех товаров.
+DROP TABLE IF EXISTS "category";
+CREATE TABLE IF NOT EXISTS "category" (
+    id SERIAL PRIMARY KEY NOT NULL,
+    title VARCHAR(100) NOT NULL UNIQUE
+);
+
+DROP TABLE IF EXISTS "item";
+CREATE TABLE IF NOT EXISTS "item" (
+    id SERIAL PRIMARY KEY NOT NULL,
+    title VARCHAR(100) NOT NULL,
+    price DECIMAL(8, 2) NOT NULL,
+    category_id INTEGER NOT NULL REFERENCES "category"(id) ON DELETE RESTRICT,
+    UNIQUE(category_id, title)
+);
+
+INSERT INTO "category" (title) VALUES ('smartphones'), ('tablets'), ('PC');
+
+INSERT INTO "item" (title, price, category_id) VALUES
+('iPhone', 999.99, 1),
+('Samsung Galaxy', 799.99, 1),
+('iPad', 1999.99, 2),
+('Lenovo', 199.99, 2),
+('MacBook Pro', 4999.99, 3),
+('Sony', 999.99, 3);
+
+INSERT INTO "item" (title, price, category_id) VALUES
+('iPhone', 999.99, 4);
