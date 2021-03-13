@@ -1,3 +1,5 @@
+"""This module provides connection to the database."""
+
 import psycopg2
 from psycopg2 import pool
 from psycopg2.extras import RealDictCursor
@@ -25,6 +27,7 @@ connection_pool: Any = psycopg2.pool.SimpleConnectionPool(
 
 @contextmanager
 def get_cursor() -> Generator[Any, None, None]:
+    """Yield dict cursor to perform database operations."""
     conn: Any = connection_pool.getconn()
     try:
         yield conn.cursor(cursor_factory=RealDictCursor)
