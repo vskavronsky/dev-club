@@ -63,6 +63,7 @@ SELECT
 FROM "item" AS i JOIN "category" AS c ON i.category_id = c.category_id;
 
 SELECT * FROM "item" NATURAL JOIN "category";
+-- merge two tables into one, and will show rows where "item".category_id = "category".category_id
 
 INSERT INTO "category" (category_title) VALUES ('TV');
 
@@ -70,8 +71,13 @@ INSERT INTO "item" (item_title, item_price, category_id) VALUES
 ('Ariston', 999.99, 5);
 
 SELECT * FROM "item" FULL OUTER JOIN "category" ON "item".category_id = "category".category_id;
+-- merge two tables into one, and will show all rows from "item" and "category"
+
 SELECT * FROM "item" LEFT JOIN "category" ON "item".category_id = "category".category_id;
+-- merge two tables into one, will show all rows from "item"(left) and from "category" only rows where "item".category_id = "category".category_id
+
 SELECT * FROM "item" RIGHT JOIN "category" ON "item".category_id = "category".category_id;
+-- merge two tables into one, will show only rows from "item" where "item".category_id = "category".category_id and all rows from "category"(right) 
 
 UPDATE "item" SET category_id = 3 WHERE item_id = 7;
 
