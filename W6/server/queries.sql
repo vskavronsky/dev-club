@@ -11,6 +11,12 @@ Shell commands:
     \c <db_name> <usr_name> - connect to database with role
     \db - listing the existing tablespaces
 
+select * from pg_shadow; --see all users
+select * from pg_database; --see all databases
+
+drop database shop; --delete database
+drop user shop; --delete user
+
 CREATE ROLE shop LOGIN CREATEDB PASSWORD 'shop';
 CREATE DATABASE shop WITH OWNER=shop ENCODING='UTF8';
 
@@ -85,12 +91,6 @@ DELETE FROM "item" WHERE item_id = 7;
 
 INSERT INTO "item" (item_title, item_price, category_id) VALUES
 ('Ariston', 999.99, 3);
-
-select * from pg_shadow; --see all users
-select * from pg_database; --see all databases
-
-drop database shop; --delete database
-drop user shop; --delete user
 
 DROP TABLE IF EXISTS "category";
 CREATE TABLE IF NOT EXISTS "category" (
